@@ -40,36 +40,46 @@ productosRouter.get("/:num", async (req, res) => {
 // recibe y agrega un producto, y lo devuelve con su id asignado.
 productosRouter.post("/", async (req, res) => {
   const productos = await getData("./contenedor/productos.txt");
-  console.log(productos);
-  // if (productos == "[]") {
-  //   productos = 0;
-  // }
-  // const id = productos.length + 1;
+  console.log(req.body);
+  if (
+    req.body.title == null ||
+    req.body.price == null ||
+    req.body.thumbnail == null
+  ) {
+    res.json({ error: "Faltan productos por completar" });
+  }
 
-  // console.log(id);
-  // const productoGuardado = [];
-  // if (id == 1) {
-  //   try {
-  //     productoGuardado.push({ ...req.body, id: id });
-  //     writeData("./contenedor/productos.txt", [{ ...req.body, id: id }]);
-  //     return res.json([{ ...req.body, id: id }]);
-  //   } catch (e) {
-  //     return console.log("No se pudo guardar los objeto " + e);
-  //   }
-  // } else {
-  //   try {
-  //     writeData("./contenedor/productos.txt", [
-  //       ...productos,
-  //       { ...req.body, id: id },
-  //     ]);
-  //     productoGuardado.push(...productos, { ...req.body, id: id });
-  //     return res.json([{ ...req.body, id: id }]);
-  //   } catch (e) {
-  //     console.log("No se pudo guardar el objeto " + e);
-  //   }
-  // }
+  if (req == null) {
+    console.log("Formulario");
+  } else {
+  }
+  if (productos == "[]") {
+    productos = 0;
+  }
+  const id = productos.length + 1;
+  const productoGuardado = [];
+  if (id == 1) {
+    try {
+      productoGuardado.push({ ...req.body, id: id });
+      writeData("./contenedor/productos.txt", [{ ...req.body, id: id }]);
+      return res.json([{ ...req.body, id: id }]);
+    } catch (e) {
+      return console.log("No se pudo guardar los objeto " + e);
+    }
+  } else {
+    try {
+      writeData("./contenedor/productos.txt", [
+        ...productos,
+        { ...req.body, id: id },
+      ]);
+      productoGuardado.push(...productos, { ...req.body, id: id });
+      return res.json([{ ...req.body, id: id }]);
+    } catch (e) {
+      console.log("No se pudo guardar el objeto " + e);
+    }
+  }
 
-  // res.json({ error: "productos no encontrado" });
+  res.json({ error: "productos no encontrado" });
 });
 
 productosRouter.put("/:id", async (req, res) => {

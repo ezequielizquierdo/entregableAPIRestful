@@ -7,7 +7,7 @@
   </head>
   <body>
     <h2>Ingrese Producto</h2>
-    <form action="/api/productos/" method="POST">
+    <form action="/api/productos" method="POST">
         <!-- Campo nombre del producto -->
         <div>
             <label>Nombre</label>
@@ -23,7 +23,7 @@
         <!-- Campo url de la foto del producto -->
         <div class="form-group">
             <label>Foto URL</label>
-            <input type="url" name="thumbnail">
+            <input type="url" name="thumbnail" required>
         </div>
 
         <!-- Botón de envío -->
