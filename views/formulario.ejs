@@ -1,0 +1,55 @@
+<!-- Incluyo el partial creado para el header a traves de include el encabezado.ejs -->
+<header><%- include('./partials/header.ejs') %></header>
+
+<body>
+  <div class="container mt-3">
+    <div class="jumbotron">
+      <h1 style="color: blue">Ingrese Producto</h1>
+      <br />
+
+      <form action="/api/productos/totales" method="post">
+        <!-- Campo nombre del producto -->
+        <div class="form-group">
+          <label for="title"><b>Producto</b></label>
+          <input
+            id="title"
+            class="form-control"
+            type="text"
+            name="title"
+            required
+          />
+        </div>
+
+        <!-- Campo precio del producto -->
+        <div class="form-group">
+          <label for="price"><b>Precio</b></label>
+          <input
+            id="price"
+            class="form-control"
+            type="number"
+            step="0.01"
+            name="price"
+            required
+          />
+        </div>
+
+        <!-- Campo url de la foto del producto -->
+        <div class="form-group">
+          <label for="thumbnail"><b>Foto Url</b></label>
+          <input
+            id="thumbnail"
+            class="form-control"
+            type="url"
+            name="thumbnail"
+            required
+          />
+        </div>
+
+        <!-- Botón de envío -->
+        <button 
+        id="enviar" 
+        class="btn btn-success mt-3 mb-5">Enviar</button>
+      </form>
+    </div>
+  </div>
+</body>

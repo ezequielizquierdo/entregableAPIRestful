@@ -15,8 +15,21 @@ productosRouter.get("/", async (req, res) => {
   try {
     const contenedor = await getData("./contenedor/productos.txt");
     contenedor !== undefined
-      ? res.send(contenedor)
+      ? // ? res.send(contenedor)
+        res.render("formulario", { productosRouter })
       : res.json({ error: "producto no encontrado" });
+  } catch (error) {
+    return res.json({ mensaje: "no se pudo comprar" });
+  }
+});
+
+productosRouter.get("/totales", async (req, res) => {
+  try {
+    const contenedor = await getData("./contenedor/productos.txt");
+    contenedor !== undefined
+      ? res.send(contenedor)
+      : // ? res.render("table", { productosRouter })
+        res.json({ error: "producto no encontrado" });
   } catch (error) {
     return res.json({ mensaje: "no se pudo comprar" });
   }
@@ -38,9 +51,12 @@ productosRouter.get("/:num", async (req, res) => {
 });
 
 // recibe y agrega un producto, y lo devuelve con su id asignado.
-productosRouter.post("/", async (req, res) => {
+productosRouter.post("/totales", async (req, res) => {
   const productos = await getData("./contenedor/productos.txt");
   console.log(req.body);
+  console.log("Length de productos", productos.length);
+  res.render("../views/partials/table.ejs", {productos});
+
   if (
     req.body.title == null ||
     req.body.price == null ||
@@ -57,7 +73,9 @@ productosRouter.post("/", async (req, res) => {
     productos = 0;
   }
   const id = productos.length + 1;
+
   const productoGuardado = [];
+
   if (id == 1) {
     try {
       productoGuardado.push({ ...req.body, id: id });
