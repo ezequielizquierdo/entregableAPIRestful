@@ -1,50 +1,26 @@
 [
   {
-    "title": "Escuadra",
-    "price": 123.45,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "title": "Juan",
+    "price": 333,
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0XSV31jhhySnOwN2Yleq4qr1tFMWJqQ5Uuu2iR62ngXLN2msMIyRs9M3RyPyKFjEDCc&usqp=CAU",
     "id": 1
   },
   {
-    "title": "Globo Terráqueo",
-    "price": 345.67,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
+    "title": "Luis",
+    "price": "222",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0XSV31jhhySnOwN2Yleq4qr1tFMWJqQ5Uuu2iR62ngXLN2msMIyRs9M3RyPyKFjEDCc&usqp=CAU",
     "id": 2
   },
   {
-    "title": "Escuadra",
-    "price": 123.45,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "title": "Luis",
+    "price": "222",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0XSV31jhhySnOwN2Yleq4qr1tFMWJqQ5Uuu2iR62ngXLN2msMIyRs9M3RyPyKFjEDCc&usqp=CAU",
     "id": 3
   },
   {
-    "title": "Calculadora",
-    "price": 234.56,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
+    "title": "Luis",
+    "price": "222",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0XSV31jhhySnOwN2Yleq4qr1tFMWJqQ5Uuu2iR62ngXLN2msMIyRs9M3RyPyKFjEDCc&usqp=CAU",
     "id": 4
-  },
-  {
-    "title": "Camisas",
-    "price": "222",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0XSV31jhhySnOwN2Yleq4qr1tFMWJqQ5Uuu2iR62ngXLN2msMIyRs9M3RyPyKFjEDCc&usqp=CAU",
-    "id": 5
-  },
-  {
-    "title": "Camisas",
-    "price": "222",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0XSV31jhhySnOwN2Yleq4qr1tFMWJqQ5Uuu2iR62ngXLN2msMIyRs9M3RyPyKFjEDCc&usqp=CAU",
-    "id": 6
-  },
-  {
-    "title": "repasador",
-    "price": "222",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0XSV31jhhySnOwN2Yleq4qr1tFMWJqQ5Uuu2iR62ngXLN2msMIyRs9M3RyPyKFjEDCc&usqp=CAU",
-    "id": 7
-  },
-  {
-    "title": "Platos",
-    "price": "22",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0XSV31jhhySnOwN2Yleq4qr1tFMWJqQ5Uuu2iR62ngXLN2msMIyRs9M3RyPyKFjEDCc&usqp=CAU",
-    "id": 8
   }
 ]

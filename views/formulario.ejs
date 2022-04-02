@@ -1,13 +1,17 @@
 <!-- Incluyo el partial creado para el header a traves de include el encabezado.ejs -->
-<header><%- include('./partials/header.ejs') %></header>
+<header>
+  <%- include('./partials/encabezado.ejs') %>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</header>
 
 <body>
   <div class="container mt-3">
     <div class="jumbotron">
-      <h1 style="color: blue">Ingrese Producto</h1>
+      <h1 style="color: blue">Ingresa el producto</h1>
       <br />
 
-      <form action="/api/productos/totales" method="post">
+      <form action="/productos" method="post">
         <!-- Campo nombre del producto -->
         <div class="form-group">
           <label for="title"><b>Producto</b></label>
@@ -27,7 +31,6 @@
             id="price"
             class="form-control"
             type="number"
-            step="0.01"
             name="price"
             required
           />
@@ -46,10 +49,15 @@
         </div>
 
         <!-- Botón de envío -->
-        <button 
-        id="enviar" 
-        class="btn btn-success mt-3 mb-5">Enviar</button>
+        <button id="enviar" class="btn btn-success mt-3 mb-5">Enviar</button>
       </form>
+
+      <h2 style="color: crimson">Historial</h2>
+      <%- include('./partials/table.ejs', productos)-%>
+      <h2 style="color: crimson">Chat de Usuarios</h2>
+      <%- include('./partials/chat.ejs')-%>
+
     </div>
+    <%- include('./partials/footer.ejs')-%>
   </div>
 </body>

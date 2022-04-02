@@ -13,23 +13,12 @@ const productosRouter = express.Router();
 //routas
 productosRouter.get("/", async (req, res) => {
   try {
-    const contenedor = await getData("./contenedor/productos.txt");
-    contenedor !== undefined
-      ? // ? res.send(contenedor)
-        res.render("formulario", { productosRouter })
+    const productos = await getData("./contenedor/productos.txt");
+    console.log("productos", productos);
+    productos !== undefined
+      ? //res.send(productos)
+      res.render("formulario", { productos })
       : res.json({ error: "producto no encontrado" });
-  } catch (error) {
-    return res.json({ mensaje: "no se pudo comprar" });
-  }
-});
-
-productosRouter.get("/totales", async (req, res) => {
-  try {
-    const contenedor = await getData("./contenedor/productos.txt");
-    contenedor !== undefined
-      ? res.send(contenedor)
-      : // ? res.render("table", { productosRouter })
-        res.json({ error: "producto no encontrado" });
   } catch (error) {
     return res.json({ mensaje: "no se pudo comprar" });
   }
@@ -51,11 +40,9 @@ productosRouter.get("/:num", async (req, res) => {
 });
 
 // recibe y agrega un producto, y lo devuelve con su id asignado.
-productosRouter.post("/totales", async (req, res) => {
-  const productos = await getData("./contenedor/productos.txt");
-  console.log(req.body);
-  console.log("Length de productos", productos.length);
-  res.render("../views/partials/table.ejs", {productos});
+// productosRouter.post("/totales", async (req, res) => {
+productosRouter.post("/", async (req, res) => {
+  let productos = await getData("./contenedor/productos.txt");
 
   if (
     req.body.title == null ||
@@ -69,35 +56,28 @@ productosRouter.post("/totales", async (req, res) => {
     console.log("Formulario");
   } else {
   }
+
+  // Si no hay productos el id será 0
   if (productos == "[]") {
     productos = 0;
   }
+  // Cuento la cantidad de productos en el array productos existente y le sumo 1
   const id = productos.length + 1;
 
   const productoGuardado = [];
 
-  if (id == 1) {
-    try {
-      productoGuardado.push({ ...req.body, id: id });
-      writeData("./contenedor/productos.txt", [{ ...req.body, id: id }]);
-      return res.json([{ ...req.body, id: id }]);
-    } catch (e) {
-      return console.log("No se pudo guardar los objeto " + e);
-    }
-  } else {
     try {
       writeData("./contenedor/productos.txt", [
         ...productos,
         { ...req.body, id: id },
       ]);
+      productos = await getData("./contenedor/productos.txt");
       productoGuardado.push(...productos, { ...req.body, id: id });
-      return res.json([{ ...req.body, id: id }]);
+      // return res.json([{ ...req.body, id: id }]);
+      return res.render("formulario", { productos });
     } catch (e) {
       console.log("No se pudo guardar el objeto " + e);
     }
-  }
-
-  res.json({ error: "productos no encontrado" });
 });
 
 productosRouter.put("/:id", async (req, res) => {
@@ -114,6 +94,20 @@ productosRouter.put("/:id", async (req, res) => {
     return res.json("no esta el producto");
   } catch (error) {
     console.log("no se pudo post producto nuevo " + error);
+  }
+});
+
+productosRouter.delete("/", async (req, res) => {
+  try {
+    let productos = await getData("./contenedor/productos.txt");
+    console.log(productos);
+    // if (estaProducto(productos)) {
+    if (productos) {
+      writeData("./contenedor/productos.txt", []);
+      return res.json({ mensaje: "Se borro todo" });
+    }
+  } catch (err) {
+    res.json({ mensaje: "No se pudo borrar todo" });
   }
 });
 

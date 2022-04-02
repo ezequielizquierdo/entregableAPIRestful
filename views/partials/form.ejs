@@ -1,0 +1,45 @@
+<h1 style="color:blue;">Ingresa el producto</h1>
+<br>
+
+<form action="/productos" method="post">
+    <!-- Campo nombre del producto -->
+    <div class="form-group">
+      <label for="title"><b>Producto</b></label>
+      <input
+        id="title"
+        class="form-control"
+        type="text"
+        name="title"
+        required
+      />
+    </div>
+
+    <!-- Campo precio del producto -->
+    <div class="form-group">
+      <label for="price"><b>Precio</b></label>
+      <input
+        id="price"
+        class="form-control"
+        type="number"
+        name="price"
+        required
+      />
+    </div>
+
+    <!-- Campo url de la foto del producto -->
+    <div class="form-group">
+      <label for="thumbnail"><b>Foto Url</b></label>
+      <input
+        id="thumbnail"
+        class="form-control"
+        type="url"
+        name="thumbnail"
+        required
+      />
+    </div>
+
+    <!-- Botón de envío -->
+    <button 
+    id="enviar" 
+    class="btn btn-success mt-3 mb-5">Enviar</button>
+  </form>

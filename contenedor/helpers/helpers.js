@@ -33,4 +33,17 @@ const estaProducto = (id, array) => {
   return array.some((item) => item.id === id);
 };
 
-module.exports = { getData, estaProducto, buscarId, writeData };
+// const clearProductos = () => {
+//   try {
+//     fs.writeFileSync("./productos.txt", "");
+//   } catch (err) {
+//     console.error(err);
+//   };
+// }
+
+const clearProductos = () => {
+  console.log("Hizo click")
+  // return productos = []
+}
+
+module.exports = { getData, estaProducto, buscarId, writeData, clearProductos };
