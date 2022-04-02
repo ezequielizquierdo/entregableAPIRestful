@@ -1,18 +1,40 @@
 <div>
-  <form onsubmit="return addMessage(this)">
-    <input type="text" id="username" placeholder="Tu Nombre" />
-    <input type="text" id="texto" placeholder="Cuéntanos algo..." />
-    <input type="submit" value="Enviar" />
-  </form>
-  <div id="mensajes"></div>
+  <!-- <form onsubmit="return addMessage(this)">
 
-  <!-- <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <input type="text" id="username" placeholder="Tu Nombre" />
+
+    <input type="text" id="texto" placeholder="Cuéntanos algo..." />
+
+    <input type="submit" value="Enviar" />
+
+  </form>
+
+  <div id="mensajes"></div> -->
+
+  <form onsubmit="return addMessage(this)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="username"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
       </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"></label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <button type="submit" value="Enviar" class="btn btn-success mt-3 mb-5">Enviar</button>
-      </div> -->
+    </div>
+
+    <div class="input-group">
+      <textarea
+        id="texto"
+        class="form-control"
+        aria-label="With textarea"
+      ></textarea>
+    </div>
+    <br />
+    <button type="submit" value="Enviar" class="btn btn-primary">Enviar</button>
+  </form>
+
+  <div id="mensajes"></div>
 </div>

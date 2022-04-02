@@ -36,24 +36,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/productos", productosRouter);
-
+let hora = new Date();
 
 const messages = [
-  { author: "Juan", text: "¡Hola! ¿Que tal?" },
-  { author: "Pedro", text: "¡Muy bien! ¿Y vos?" },
-  { author: "Ana", text: "¡Genial!" },
+  { author: "Admin", 
+  text: "Bienvenidos al chat. Que te gustaría contarnos?" },
 ];
 
 // Es el metodo que me define la logica de la conexión.
 // El evento para levantar la conexión es el evento "connection".
 io.on("connection", (socket) => {
   console.log("se conecto un usuario");
-    // Con el metodo socket.emit procedo a enviarles todos los mensajes que haya acumulados hasta el momento
+  // Con el metodo socket.emit procedo a enviarles todos los mensajes que haya acumulados hasta el momento
   socket.emit("messages", messages);
   socket.on("notificacion", (data) => {
     console.log(data);
   });
-// Con el socket.on recibo los mensajes
+  // Con el socket.on recibo los mensajes
   socket.on("new-message", (data) => {
     messages.push(data);
     io.sockets.emit("messages", messages);
