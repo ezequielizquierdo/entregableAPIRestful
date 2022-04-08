@@ -30,8 +30,13 @@ const getData = async (file) => {
 };
 
 const estaProducto = (id, array) => {
-  return array.some((item) => item.id === id);
+  return array.filter(producto => producto.id === id);
 };
+
+// function estaProducto(arr, val) {
+//   return arr.some(arrVal => val === arrVal);
+// }
+
 
 // const clearProductos = () => {
 //   try {

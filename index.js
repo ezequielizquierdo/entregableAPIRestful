@@ -2,11 +2,15 @@
 const express = require("express");
 // Importo los routers construidos
 const productosRouter = require("./router/productos");
+const carritoRouter = require("./router/carrito");
+// const detalleRouter = require("./router/detalle");
 // // Declaro el puerto
-const PORT = 8080;
+const PORT = 8081;
 // Descargo el modulo y lo importo
 const { Server: IOServer } = require("socket.io");
 const { Server: HttpServer } = require("http");
+const adminRouter = require('./router/adminRouter')
+
 
 // // Instancio app express
 const app = express();
@@ -19,7 +23,7 @@ const io = new IOServer(httpServer);
 //   console.log("servidor levantado en el puerto " + server.address().port);
 // });
 // Levanto el servidor socket
-const server = httpServer.listen(8080, () =>
+const server = httpServer.listen(8081, () =>
   console.log("servidor Levantado en:", PORT)
 );
 
@@ -36,11 +40,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/productos", productosRouter);
-let hora = new Date();
+// app.use("/productos/:num", detalleRouter);
+app.use("/carrito", carritoRouter);
+app.use("/admin", adminRouter);
 
 const messages = [
-  { author: "Admin", 
-  text: "Bienvenidos al chat. Que te gustaría contarnos?" },
+  { author: "Admin", text: "Bienvenidos al chat. Que te gustaría contarnos?" },
 ];
 
 // Es el metodo que me define la logica de la conexión.

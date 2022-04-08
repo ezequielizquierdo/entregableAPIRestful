@@ -9,3 +9,73 @@
 .user {
   color: rgb(59, 57, 143);
 }
+
+.table-responsive {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 70px;
+  flex-flow: wrap;
+}
+
+.containerimg {
+  display: flex;
+  height: 40vh;
+}
+
+.card-img-top {
+  object-fit: contain;
+}
+
+/* CARD.EJS */
+.card-container {
+  display: flex;
+  background-color: whitesmoke;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.containerimg-card {
+  display: flex;
+  height: 5%;
+}
+
+.detailcontainer-card {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.title-card {
+  display: flex;
+  height: 20%;
+  align-items: center;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.price-card {
+  display: flex;
+  height: 20%;
+  align-items: center;
+  padding-left: 20px;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.description-card{
+  display: flex;
+  height: 30%;
+  align-items: center;
+  padding-left: 20px;
+  font-weight: 100;
+  font-size: 0.9rem;
+  text-align: justify;
+  white-space: pre-wrap;
+  }
+
+  .img-card{
+    width: 100%;
+  }

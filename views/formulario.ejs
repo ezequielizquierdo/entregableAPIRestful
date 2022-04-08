@@ -52,13 +52,20 @@
         <!-- Botón de envío -->
         <button id="enviar" class="btn btn-success mt-3 mb-5">Enviar</button>
       </form>
-
-      <h2 style="color: crimson">Historial</h2>
-      <%- include('./partials/table.ejs', productos)-%>
-      <h2 style="color: crimson">Chat de Usuarios</h2>
-      <%- include('./partials/chat.ejs')-%>
-
     </div>
+    
+    <div class="jumbotron">
+
+      <h2 style="color: crimson">Productos</h2>
+      <%- include('./partials/table.ejs', productos)-%>
+      
+      
+    </div>
+    <div class="jumbotron">
+
+    <h2 style="color: crimson">Chat de Usuarios</h2>
+    <%- include('./partials/chat.ejs')-%>
     <%- include('./partials/footer.ejs')-%>
+    </div>
   </div>
 </body>

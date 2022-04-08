@@ -1,0 +1,16 @@
+<!-- Incluyo el partial creado para el header a traves de include el encabezado.ejs -->
+<header>
+  <%- include('./partials/encabezado.ejs') %>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+</header>
+
+<body>
+  <div class="container mt-3">
+    <div class="jumbotron">
+      <h2 style="color: rgb(60, 38, 42)">Productos en carrito</h2>
+      <%- include('./partials/carrito.ejs', carrito)-%>
+    </div>
+  </div>
+</body>
