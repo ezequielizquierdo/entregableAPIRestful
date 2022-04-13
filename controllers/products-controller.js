@@ -33,18 +33,6 @@ const estaProducto = (id, array) => {
   return array.filter(producto => producto.id === id);
 };
 
-// function estaProducto(arr, val) {
-//   return arr.some(arrVal => val === arrVal);
-// }
-
-
-// const clearProductos = () => {
-//   try {
-//     fs.writeFileSync("./productos.txt", "");
-//   } catch (err) {
-//     console.error(err);
-//   };
-// }
 
 const clearProductos = () => {
   console.log("Hizo click")

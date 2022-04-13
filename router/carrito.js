@@ -4,7 +4,7 @@ const {
   buscarId,
   estaProducto,
   writeData,
-} = require("../contenedor/helpers/helpers");
+} = require("../controllers/products-controller");
 
 const fs = require("fs");
 

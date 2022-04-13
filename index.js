@@ -2,6 +2,7 @@
 const express = require("express");
 // Importo los routers construidos
 const productosRouter = require("./router/productos");
+const apiRouter = require("./router/api");
 const carritoRouter = require("./router/carrito");
 // const detalleRouter = require("./router/detalle");
 // // Declaro el puerto
@@ -39,8 +40,8 @@ app.get("/", (req, res) => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/api", apiRouter);
 app.use("/productos", productosRouter);
-// app.use("/productos/:num", detalleRouter);
 app.use("/carrito", carritoRouter);
 app.use("/admin", adminRouter);
 

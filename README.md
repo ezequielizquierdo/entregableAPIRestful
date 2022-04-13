@@ -1,31 +1,27 @@
 # Primera entrega del Proyecto final:
 
-1- Aspectos a incluir en el entregable: 
-El router base '/api/productos' implementará cuatro funcionalidades:
+1- El router base '/api' implementará las siguientes funcionalidades:
 
-GET: '/:id?' - Me permite listar todos los productos disponibles ó un producto por su id (disponible para usuarios y administradores)
-POST: '/' - Para incorporar productos al listado (disponible para administradores)
-PUT: '/:id' - Actualiza un producto por su id (disponible para administradores)
-DELETE: '/:id' - Borra un producto por su id (disponible para administradores)
-
-
-
+GET: '/' - Me permite listar todos los productos disponibles
+GET: '/:id' - Me permite listar un producto por su id
+POST: '/' - Para incorporar productos al listado
+PUT: '/:id' - Actualiza un producto por su id
+DELETE: '/:id' - Borra un producto por su id
+DELETE: '/' - Borra todos los productos
 
 
-2- El router base '/api/carrito' implementará tres rutas disponibles para usuarios y administradores:
-POST: '/' - Crea un carrito y devuelve su id.
-DELETE: '/:id' - Vacía un carrito y lo elimina.
-GET: '/:id/productos' - Me permite listar todos los productos guardados en el carrito
-POST: '/:id/productos' - Para incorporar productos al carrito por su id de producto
-DELETE: '/:id/productos/:id_prod' - Eliminar un producto del carrito por su id de carrito y de producto
+2- El router '/api/productos' implementará las siguientes funcionalidades:
 
-3- Crear una variable booleana administrador, cuyo valor configuraremos más adelante con el sistema de login. Según su valor (true ó false) me permitirá alcanzar o no las rutas indicadas. En el caso de recibir un request a una ruta no permitida por el perfil, devolver un objeto de error. Ejemplo: { error : -1, descripcion: ruta 'x' método 'y' no autorizada }
+POST: '/api/productos' - Crea un producto y le asigna su id.
+DELETE: '/api/productos/:id' - Elimina el producto del id seleccionado
+GET: '/api/productos/:id' - Me permite listar un producto por su id
+POST: '/api/productos/:id' - Para incorporar productos por su id
+DELETE: '/api/productos/:id' - Eliminar un producto por su id de productos
 
-4- Un producto dispondrá de los siguientes campos:  id, timestamp, nombre, descripcion, código, foto (url), precio, stock.
+3- El router '/api/carrito' implementará las siguientes funcionalidades:
 
-5- El carrito de compras tendrá la siguiente estructura: 
-id, timestamp(carrito), productos: { id, timestamp(producto), nombre, descripcion, código, foto (url), precio, stock }
-
-6- El timestamp puede implementarse con Date.now()
-
-7- Realizar la persistencia de productos y del carrito de compras en el filesystem.
+POST: '/api/carrito' - Crea un carrito y le asigna su id.
+DELETE: '/api/carrito/:id' - Elimina un producto del carrito
+GET: '/api/carrito/:id' - Me permite listar un producto por su id
+POST: '/api/carrito/:id' - Para incorporar productos al carrito por su id
+DELETE: '/api/carrito/:id' - Eliminar un producto del carrito por su id de carrito
